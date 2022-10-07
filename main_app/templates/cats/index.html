@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Cats Index | Cat Collector
+{% endblock %}
+
+{% block content %}
+<h1>Cat Index</h1>
+
+{% for cat in cats %}
+    <div class="card">
+        <div class="card-contend">
+            <span class="card-title">{{ cat.name }}</span>
+            <p>Breed: {{ cat.breed }}</p>
+            <p>Breed: {{ cat.description }}</p>
+            {% if cat.age > 0 %}
+                <p>Age: {{ cat.age}}</p>
+            {% else %} 
+                <p>Age: Kitten</p>   
+            {% endif%}
+            </div>
+    </div>
+
+{% endfor %}
+{% endblock %}
