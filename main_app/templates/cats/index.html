@@ -8,18 +8,20 @@ Cats Index | Cat Collector
 <h1>Cat Index</h1>
 
 {% for cat in cats %}
+<a href="{% url 'detail' cat.id %}">
     <div class="card">
         <div class="card-contend">
             <span class="card-title">{{ cat.name }}</span>
             <p>Breed: {{ cat.breed }}</p>
-            <p>Breed: {{ cat.description }}</p>
+            <p>Description: {{ cat.description }}</p>
             {% if cat.age > 0 %}
-                <p>Age: {{ cat.age}}</p>
+            <p>Age: {{ cat.age}}</p>
             {% else %} 
-                <p>Age: Kitten</p>   
+            <p>Age: Kitten</p>   
             {% endif%}
-            </div>
+        </div>
     </div>
+</a>
 
 {% endfor %}
 {% endblock %}
