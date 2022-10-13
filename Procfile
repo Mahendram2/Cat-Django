@@ -1,1 +1,1 @@
-web: gunincorn catcollector.wsgi
+web: gunicorn catcollector.wsgi
